@@ -1,0 +1,52 @@
+{% extends 'aplicacion/base.html' %}
+{% load  %}
+
+
+{% block titulo %}
+
+Sitio de Macetas
+
+{% endblock titulo %}
+    
+
+{% block contenido %}
+    
+<h1>Macetas</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Material</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+
+    <body>
+
+        <h1>{{Titel|capfirst}} - {% now 'd / m / y' %}</h1>
+        <h4>Cantidad de macetas:{{flowerpot|length}}</h4>     
+
+    {% for f in flowerpot  %}   
+        <tr>
+            <td>{{f.id}}</td>
+            <td>{{f.nombre}}</td>
+            <td>{{f.material}}</td>
+            <td>{{f.precio}}</td>
+        </tr>
+    
+    {% endfor %}
+        </body>
+        </table>
+
+        <h4>Descuentos: {{descuento.0}}, {{descuento.1}} </h4>
+
+
+
+{% comment %}
+    Prueba de comment (comentario como #)
+{% endcomment %}
+    
+
+{% endblock contenido %}

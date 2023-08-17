@@ -1,0 +1,24 @@
+{% extends 'aplicacion/base.html' %}
+{% load  %}
+
+
+{% block titulo %}
+
+Buscar Plantas
+
+{% endblock titulo %}
+    
+
+{% block contenido %}
+<body>
+    <h2>Buscar Plantas</h2>
+    <form action="/aplicacion/search2" method="post">
+        {% csrf_token %}
+        <p>Buscar: <input type="text" name="buscar" id="buscar"></p>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
+
+    
+{% endblock contenido %}

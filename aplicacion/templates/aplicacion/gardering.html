@@ -1,0 +1,52 @@
+{% extends 'aplicacion/base.html' %}
+{% load  %}
+
+
+{% block titulo %}
+
+Sitio de Jardineria
+
+{% endblock titulo %}
+    
+
+{% block contenido %}
+    
+<h1>Jardineria</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+
+    <body>
+
+        <h1>{{Titel|capfirst}} - {% now 'd / m / y' %}</h1>
+        <h4>Cantidad de objetos:{{gardering|length}}</h4>     
+
+    {% for g in gardering  %}   
+        <tr>
+            <td>{{g.id}}</td>
+            <td>{{g.nombre}}</td>
+            <td>{{g.tipo}}</td>
+            <td>{{g.precio}}</td>
+        </tr>
+    
+    {% endfor %}
+        </body>
+        </table>
+
+        <h4>Descuentos: {{descuento.0}}, {{descuento.1}} </h4>
+
+
+
+{% comment %}
+    Prueba de comment (comentario como #)
+{% endcomment %}
+    
+
+{% endblock contenido %}
