@@ -12,9 +12,9 @@ Buscar Plantas
 {% block contenido %}
 <body>
     <h2>Buscar Plantas</h2>
-    <form action="/aplicacion/search2" method="post">
+    <form action="/search2" method="get">
         {% csrf_token %}
-        <p>Buscar: <input type="text" name="buscar" id="buscar"></p>
+        <p>Patron en Buscar a Plantas: <input type="text" name="buscar" id="buscar"></p>
         <input type="submit" value="Enviar">
     </form>
 </body>
@@ -22,3 +22,5 @@ Buscar Plantas
 
     
 {% endblock contenido %}
+
+

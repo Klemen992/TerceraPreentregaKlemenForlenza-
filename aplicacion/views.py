@@ -45,14 +45,13 @@ def plantasForm2(request):
 
 
 def buscarEspecie(request):
-    return render(request, "aplicacion/searchSpecies")
-    
+    return render(request, "aplicacion/searchSpecies.html")
 
 def buscar2(request):
     if request.GET['buscar']:
         patron = request.GET['buscar']
-        plantas = Plantas.objects.filter(especie_icontains=patron)
-        contexto = {"plantas": plantas}
+        plantas = Plantas.objects.filter(especie__icontains=patron)  #doble __
+        contexto = {"plants": plantas, 'Titel': f'Especies que tienen como patron "{patron}"'}
         return render(request, "aplicacion/plants.html", contexto)
 
     return HttpResponse("No se ingreso nada al buscar")
