@@ -57,17 +57,7 @@ class Decoracion(models.Model):
         verbose_name_plural = "Decoracion"
         ordering = ['-tipo']
 
-class Usuarios(models.Model):
-    nombre= models.CharField(max_length=50)
-    nombre= models.CharField(max_length=50)
-    email = models.EmailField()
-    
-    def __str__(self):
-        return f"{self.nombre}, {self.email}"
-    
-    class Meta:
-        verbose_name = "Usuario"
-        verbose_name_plural = "Usuarios"
+
 
 
 

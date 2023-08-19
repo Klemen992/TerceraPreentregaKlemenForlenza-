@@ -80,6 +80,5 @@ def decoracion(request):
     contexto = {'decoration':Decoracion.objects.all(), "Titel": "disponible", "descuento": ["4 por 3", "20% pagando en efectivo"]}      #Plantas' es el modelo, dice que me devuelva todos los objetos de la clase o modelo Plantas
     return render(request, "aplicacion/decoration.html", contexto)
 
-def contacto(request):
-    return render(request, "aplicacion/contact.html")
+
 
